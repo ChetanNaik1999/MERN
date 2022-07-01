@@ -32,11 +32,11 @@ export const register=(name,email,otp,password)=>async(dispatch)=>{
     }
 }
 
-export const upadateUserProfile=(user) => async(dispatch,getState)=>{
-    dispatch({ type:UPDATE_REQUEST, payload:user});
+export const upadateUserProfile=(id,name,email,password) => async(dispatch,getState)=>{
+    dispatch({ type:UPDATE_REQUEST, payload:{name,email,password}});
     
     try {
-        const { data}=await Axios.put('/profile',{user});
+        const { data}=await Axios.put(`/profile/${id}`,{name,email,password});
         dispatch({ type:UPDATE_SUCCESS ,payload:data});
         dispatch({ type:USER_SIGNIN_SUCCESS,payload:data});
         localStorage.setItem('userInfo',JSON.stringify(data));

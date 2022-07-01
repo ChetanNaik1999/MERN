@@ -15,7 +15,12 @@ const Update = () => {
   const dispatch=useDispatch();
   const submitHandler =(e) =>{
     e.preventDefault();
-    dispatch(upadateUserProfile({name,email,password}));
+    if(password === confirmpassword){
+    dispatch(upadateUserProfile(userInfo._id,name,email,password));
+    }
+    else{
+      alert("Password and Confirm Password are Not matched");
+    }
   }
   return (
     <div>

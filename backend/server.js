@@ -36,7 +36,7 @@ app.post('/login',async(req,res)=>{
 });
   
 
-app.put('/profile',async(req,res)=>{
+app.put('/profile/:id',async(req,res)=>{
     const user=await User.findById(req.params.id);
     if(user){
       user.name= req.body.name || user.name;
@@ -44,7 +44,7 @@ app.put('/profile',async(req,res)=>{
       if(req.body.password){
         user.password=bcrypt.hashSync(req.body.password ,8);
       }
-      const updatedUser =await User.save();
+      const updatedUser =await user.save();
       res.send({
         _id:updatedUser._id,
         name:updatedUser.name,
