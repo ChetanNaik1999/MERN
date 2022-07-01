@@ -53,7 +53,7 @@ const Navbar = () => {
 
             </ul>
             {
-              userInfo!==null && (
+              userInfo && (
                 <>
                  <h4 className='mx-2'>Welcome! {userInfo.name}</h4>
                 </>

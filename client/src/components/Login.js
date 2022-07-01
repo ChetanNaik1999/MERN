@@ -16,12 +16,12 @@ const Login=()=>{
     }
     return (
         <>
-           <form className="signin container-fluid bg-light pt-1 pb-5" onSubmit={submitHandler}>
+           <section className="signin container-fluid bg-light pt-1 pb-5" >
             <div className="container">
              <div className="signin-content">
                  <div className="signin-form">
                      <h1 className="form-title text-center text-danger">SignIn</h1>
-                     <form className="form">
+                     <form className="form" onSubmit={submitHandler}>
                          <div>
                              
   <div class="mb-3">
@@ -42,7 +42,7 @@ const Login=()=>{
              </div>
             </div>
            
-        </form>
+        </section>
         </>
     )
 }

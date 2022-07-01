@@ -108,7 +108,7 @@ app.post('/register',async(req,res) =>{
     });
   }
   else{
-       res.send({"message":"Invalid Token or Inavalid OTP"});
+       res.status(404).send({"message":"Invalid Token or Inavalid OTP"});
   }
 
 });

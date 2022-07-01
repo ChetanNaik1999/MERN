@@ -52,9 +52,7 @@ const Signup=()=>{
              <div className="signup-content">
                  <div className="signup-form">
                      <h1 className="form-title text-center text-danger">Sign Up</h1>
-                     <div className="imgDiv m-auto">
-      <img src={logo} alt="Logo" className="img-fluid" />
-  </div>
+                   
                      <form className="form" method="POST" onSubmit={submitHandler}>
                          <div>
                               <div class="mb-3">

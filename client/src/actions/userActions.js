@@ -6,7 +6,7 @@ import { GET_OTP_FAIL, GET_OTP_REQUEST, GET_OTP_SUCCESS, UPDATE_FAIL, UPDATE_REQ
 export const signin=(email,password)=>async(dispatch)=>{
     dispatch({type:USER_SIGNIN_REQUEST,payload:{email,password}});
     try{ 
-   const { data} =await Axios.post('/login',{ email,password});
+   const { data} =await Axios.post('/login',{email,password});
    dispatch({ type:USER_SIGNIN_SUCCESS,payload:data});
    localStorage.setItem("userInfo",JSON.stringify(data));
     }
