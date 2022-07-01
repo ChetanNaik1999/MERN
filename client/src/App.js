@@ -8,7 +8,10 @@ import Contact from './components/Contact';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Update from './components/Update';
+import { useSelector } from 'react-redux';
 const App=()=>{
+  const userSignin=useSelector((state) =>state.userSignin);
+  const { userInfo }=userSignin;
     return (
       <>
         <Navbar/>
@@ -31,10 +34,16 @@ const App=()=>{
         <Route path="/signup">
         <Signup />
         </Route>
-
+         {
+          userInfo && (
+            <>
         <Route path="/update">
         <Update/>
         </Route>
+            </>
+          )
+         }
+       
           </>
 )
 }

@@ -61,6 +61,7 @@ app.post('/register',async(req,res) =>{
       let currentTime = new Date().getTime();
       let diff = isValid.expireIn - currentTime;
       if(diff < 0){
+        await Otp.deleteOne({otp:req.body.otp});
         res.status(404).send({message:"Token Expire"});
         return;
       }
